@@ -1,0 +1,236 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
+
+  <title>Share That To</title>
+  <meta name="description" content="Product Growth">
+  <meta name="author" content="Share That To">
+
+  <style type="text/css" media="screen, print">
+
+  @font-face {
+    font-family: "Avenir Black";
+    src: url("assets/Avenir Black.ttf") format("ttf");
+  }
+
+  body { 
+    margin: 0;
+    padding: 0;
+    font-family: 'Avenir Black', sans-serif;
+  }
+
+  .container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0F0F0F;
+  }
+
+    #header{
+      display: flex;
+      width: 86vw;
+      height: 20vh;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0px 7vw 0px 7vw;
+    }
+
+    #header > img {
+      height: 4vh;
+      margin-right: auto;
+    }
+
+    button {
+      border: none;
+      margin: 0;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      color: #ffffff;
+      font-family: Avenir Black;
+      text-align: center;
+      transition: background 250ms ease-in-out, 
+                  transform 150ms ease;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: transparent;
+    }
+
+    .main-cta {
+      background: #607DCD;
+      border-radius: 8px;
+    }
+
+    button:hover,
+    button:focus {
+        text-decoration: underline;
+    }
+
+    #main{
+      height: 60vh;
+    }
+
+    .main-cta:active {
+        transform: scale(0.99);
+    }
+
+  #share-bar {
+    height: 7vh;
+    margin-left: 18px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;  
+    overflow: -moz-scrollbars-none; 
+  }
+
+  #share-bar::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .share-bar-icon{
+    height: 7vh;
+    width: 7vh;
+    overflow-x: scroll;
+    margin-right: 22px
+  }
+
+    #core-content-wrapper {
+      position: absolute;
+      height: 100%;
+      top: 0px;
+    }
+
+  @media only screen and (max-width: 1000px) {
+    .sub-cta{
+      display: none; 
+    }
+
+    #iphone-container{
+      position: relative;
+      height: 60vh;
+    }
+
+    #iphone{
+      height: 100%;
+      display:block;
+      margin:auto;
+    }
+
+    h1{
+      font-size: 1.8em;
+      margin: 0px 0px 0px 0px;
+      padding: 0px;
+      color: #ffffff;
+      background-color: #0F0F0F;
+      margin-block-start: 0px;
+      margin-block-end: 0px;
+    }
+
+    #copy-wrapper{
+      width: 100%
+    }
+    
+    #share-bar {
+      width: 56vw;
+    }
+
+  }
+
+  @media only screen and (min-width: 1000px) {
+    #iphone-container{
+      margin-left: 28vw;
+      position: relative;
+      height: 60vh;
+    }
+    #iphone{
+      height: 100%;
+    }
+
+    h1{
+      margin: 0px 0px 0px 0px;
+      padding: 0px;
+      color: #ffffff;
+      background-color: #0F0F0F;
+      overflow-x: hidden;
+    }
+    
+    #share-bar {
+      width: 60vw;
+    }
+  }
+
+  </style>
+
+</head>
+<body>
+  <div class ='container'>
+    <div id='header'>
+      <img src="assets/logo.png">
+      <div id='navigator'>
+        <button class = 'sub-cta'>Docs</button>
+        <button class = 'sub-cta'>About</button>
+        <button class = 'main-cta'>Book Demo</button>
+      </div>
+    </div>
+    <div id='main'>
+       <div id='iphone-container'> 
+        <img id='iphone' src="assets/iphone_bezel.png">
+        <div id = 'core-content-wrapper'>
+          <div id = 'copy-wrapper'>
+            <h1>Create Shareable Content</h1>
+            <h1>Distribute with a Better Sharesheet</h1>
+          </div>
+          <div id='share-bar'>
+            <img class='share-bar-icon' src="assets/share_outlets/InstagramStories.png">
+            <img class='share-bar-icon' src="assets/share_outlets/Twitter.png">
+            <img class='share-bar-icon' src="assets/share_outlets/Download.png">
+            <img class='share-bar-icon' src="assets/share_outlets/Messenger.png">
+            <img class='share-bar-icon' src="assets/share_outlets/IMessage.png">
+            <img class='share-bar-icon' src="assets/share_outlets/Snapchat.png">
+            <img class='share-bar-icon' src="assets/share_outlets/More.png">
+            <img class='share-bar-icon' src="assets/share_outlets/Whatsapp.png">
+            <img class='share-bar-icon' src="assets/share_outlets/InstagramFeed.png">
+            <img class='share-bar-icon' src="assets/share_outlets/Facebook.png">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='footer'>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+  function reportWindowSize() {
+    const screenWidth = window.innerWidth
+    const mainContnet = document.querySelector("#iphone-container")
+    const shareBar = mainContnet.querySelector("#share-bar")
+    const copy = mainContnet.querySelector("#copy-wrapper")
+    const iphoneWidth = mainContnet.firstElementChild.offsetWidth
+    const iphoneheight = mainContnet.firstElementChild.offsetWidth
+    const iconWidth = shareBar.firstElementChild.offsetWidth
+    shareBar.style.setProperty('bottom', iphoneheight* .27+ "px");
+      shareBar.style.setProperty('padding-left', ( (iphoneWidth/2) - (iconWidth/2) - 18 )+ "px");
+      shareBar.style.setProperty('margin-top', iphoneheight* .73+ "px");
+    if(screenWidth > 1000) {
+      copy.style.setProperty('margin', iphoneheight/3 + "px 0px 0px " + (iphoneWidth*0.6)+ "px")
+      shareBar.style.setProperty('padding-left', ( (iphoneWidth/2) - (iconWidth/2) - 18 )+ "px");
+      copy.style.setProperty('text-align', "")
+      
+    } else {
+      copy.style.setProperty('margin', iphoneheight/3 + "px 0px 0px 0px")
+      copy.style.setProperty('text-align', "center")
+      shareBar.style.setProperty('padding-left', ( screenWidth/2 - (iconWidth/2) - 18 )+ "px");
+    }
+  }
+
+  window.onresize = reportWindowSize;
+  window.onload = reportWindowSize;
+
+  </script>
+</body>
+</html>
